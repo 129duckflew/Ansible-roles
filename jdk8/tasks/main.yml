@@ -1,0 +1,8 @@
+- name:  unarchive jdk
+  unarchive: src=jdk-8u251-linux-x64.tar.gz dest=/usr/local/
+- name:  set path variable
+  lineinfile: dest=/etc/profile line="export JAVA_HOME=/usr/local/jdk-8u251-linux-x64.tar.gz\n
+    export PATH=$JAVA_HOME/bin:$PATH\n
+    export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar"
+- name: reload config
+  shell: source /etc/profile
