@@ -1,6 +1,6 @@
 # Ansible Role: java
 
-添加jdk1.7版本
+添加jdk1.8版本
 
 ## 要求
 
@@ -26,20 +26,14 @@ python `2.6.6`
 
 
 ## 依赖
-
-没有
-
+将自己的jdktar包复制到jdk8的files目录下 然后替换tar包的名字到roles中
 ## github地址
 https://github.com/lework/Ansible-roles/tree/master/java
 
 ## Example Playbook
-    
-    jdk 1.7版本
+jdk 1.8版本
+ ```yaml
     - hosts: node1
       roles:
-        - java
-        
-    jdk 1.8版本
-    - hosts: node1
-      roles:
-       - { role: java ,java_version: "1.8" }
+       - jdk8
+ ```
