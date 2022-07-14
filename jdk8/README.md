@@ -26,7 +26,7 @@ python `2.6.6`
 
 
 ## 依赖
-将自己的jdktar包复制到jdk8的files目录下 然后替换tar包的名字到roles中
+在jdk8下新建files 文件夹 将自己的jdktar包复制到jdk8的files目录下 然后替换vars/jdk1.8里面的变量名
 ## github地址
 https://github.com/lework/Ansible-roles/tree/master/java
 
