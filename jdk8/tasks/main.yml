@@ -3,10 +3,12 @@
 - name:  unarchive jdk
   unarchive: src={{java_file}} dest=/usr/local/
 - name:  set path variable
-  lineinfile: dest=/etc/profile line="export JAVA_HOME={{java_home}}\n
-    export PATH=$JAVA_HOME/bin:$PATH\n
-    export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar"
-- name: reload config
-  shell: source /etc/profile
-  args:
-    executable: /bin/bash
+  lineinfile: dest=/etc/profile line={{item}}
+  with_items:
+    -  export JAVA_HOME={{java_home}}
+    -  export PATH=$JAVA_HOME/bin:$PATH
+    -  export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar
+- name: softlink
+  shell: ln -s {{java_home}}/bin/* /usr/bin/
+
+
