@@ -1,3 +1,5 @@
 *.iml
 .idea
 jdk8/files
+kubernetes-bin/files/bin
+kubernetes-bin/files/images
