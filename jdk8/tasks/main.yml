@@ -8,3 +8,5 @@
     export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar"
 - name: reload config
   shell: source /etc/profile
+  args:
+    executable: /bin/bash
