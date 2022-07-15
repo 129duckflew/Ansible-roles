@@ -21,13 +21,8 @@
 
 - name: install | Ensure gcc packages are installed.
   yum:
-    name: "{{ item }}"
+    name: ['gcc', 'gcc-c++','libtool', 'make']
     state: installed
-  with_items:
-    - gcc
-    - gcc-c++
-    - libtool
-    - make
   ignore_errors: true
 
 
